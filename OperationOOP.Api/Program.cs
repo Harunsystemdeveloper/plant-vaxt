@@ -21,6 +21,7 @@ namespace OperationOOP.Api
                 options.InferSecuritySchemes();
             });
 
+            // Register Database service as singleton
             builder.Services.AddSingleton<IDatabase, Database>();
 
             var app = builder.Build();
@@ -36,9 +37,12 @@ namespace OperationOOP.Api
 
             app.UseAuthorization();
 
+            // Map the endpoints
             app.MapEndpoints<Program>();
 
+            // Run the application
             app.Run();
         }
     }
 }
+
