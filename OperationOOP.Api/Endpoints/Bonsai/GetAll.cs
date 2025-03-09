@@ -1,4 +1,4 @@
-﻿namespace OperationOOP.Api.Endpoints;
+﻿﻿namespace OperationOOP.Api.Endpoints;
 public class GetAllBonsais : IEndpoint
 {
     // Mapping

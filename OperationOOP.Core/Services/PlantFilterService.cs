@@ -1,7 +1,15 @@
-public class PlantFilterService
+using System.Collections.Generic;
+using System.Linq;
+using OperationOOP.Core.Models;
+
+namespace OperationOOP.Core.Services
 {
-    public List<Plant> FilterPlantsByCareLevel(List<Plant> plants, string careLevel)
+    public class PlantFilterService
     {
-        return plants.Where(p => p.CareLevel.Equals(careLevel, StringComparison.OrdinalIgnoreCase)).ToList();
+        public List<Plant> FilterPlantsByCareLevel(List<Plant> plants, string careLevel)
+        {
+            return plants.Where(p => p.CareLevel.ToLower() == careLevel.ToLower()).ToList();
+        }
     }
 }
+

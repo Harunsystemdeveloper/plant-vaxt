@@ -1,7 +1,13 @@
-public class WateringScheduleService
+using System;
+
+namespace OperationOOP.Core.Services
 {
-    public DateTime CalculateNextWatering(DateTime lastWatered, int daysInterval)
+    public class WateringScheduleService
     {
-        return lastWatered.AddDays(daysInterval);
+        public DateTime CalculateNextWatering(DateTime lastWatering, int intervalDays)
+        {
+            return lastWatering.AddDays(intervalDays);
+        }
     }
 }
+

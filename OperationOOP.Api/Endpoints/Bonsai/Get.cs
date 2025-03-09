@@ -1,4 +1,4 @@
-﻿namespace OperationOOP.Api.Endpoints;
+﻿﻿namespace OperationOOP.Api.Endpoints;
 public class GetBonsai : IEndpoint
 {
     public static void MapEndpoint(IEndpointRouteBuilder app) => app

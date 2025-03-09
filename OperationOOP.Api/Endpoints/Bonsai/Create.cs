@@ -1,4 +1,8 @@
-﻿namespace OperationOOP.Api.Endpoints;
+﻿using Microsoft.AspNetCore.Mvc;
+using OperationOOP.Core.Data;
+using OperationOOP.Core.Models;
+
+namespace OperationOOP.Api.Endpoints;
 public class CreateBonsai : IEndpoint
 {
     public static void MapEndpoint(IEndpointRouteBuilder app) => app
@@ -36,4 +40,3 @@ public class CreateBonsai : IEndpoint
         return TypedResults.Ok(new Response(bonsai.Id));
     }
 }
-

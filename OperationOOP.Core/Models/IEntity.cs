@@ -1,4 +1,8 @@
-public interface IEntity
+namespace OperationOOP.Core.Interfaces
 {
-    int Id { get; set; }
+    public interface IEntity
+    {
+        int Id { get; set; }
+    }
 }
+

@@ -1,3 +1,5 @@
+using OperationOOP.Core.Interfaces; 
+
 public class Plant : IEntity
 {
     public int Id { get; set; }
