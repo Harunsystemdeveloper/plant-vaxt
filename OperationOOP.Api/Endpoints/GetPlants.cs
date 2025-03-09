@@ -7,12 +7,15 @@ using OperationOOP.Core.Data;
 namespace OperationOOP.Api.Endpoints
 
     {
+        // Detta är endpoint för att hämta alla växter
     public class GetPlants : IEndpoint
     {
+        // Detta beskriver API-routen och kopplar den till metoden Handle
         public static void MapEndpoint(IEndpointRouteBuilder app) => app
             .MapGet("/plants", Handle)
             .WithSummary("Get all plants");
 
+           // Detta är en modell  som returnerar information om växter
         public record Response(
             int Id,
             string Name,
@@ -20,6 +23,8 @@ namespace OperationOOP.Api.Endpoints
             string CareLevel
         );
 
+
+// Detta hämtar alla växter från databasen och returnerar dem som en lista
         private static List<Response> Handle(IDatabase db)
         {
             return db.Plants.Select(plant => new Response(
@@ -38,6 +43,8 @@ namespace OperationOOP.Api.Endpoints
             .WithSummary("Get a plant by ID");
 
         public record Request(int Id);
+
+        // Detta är en respons modell  som returnerar information om en specifik växt
 
         public record Response(
             int Id,

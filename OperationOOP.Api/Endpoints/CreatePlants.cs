@@ -19,9 +19,11 @@ namespace OperationOOP.Api.Endpoints
 
         public record Response(int Id);
 
+     // Deatta hanterar skapandet av en ny växt
         private static async Task<IResult> Handle(Request request, IDatabase db)
         {
-            var plant = new Plant
+        // Detta skapar en ny växt med unikt ID
+             var plant = new Plant
             {
                 Id = db.Plants.Any() ? db.Plants.Max(p => p.Id) + 1 : 1,
                 Name = request.Name,

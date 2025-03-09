@@ -9,6 +9,8 @@ namespace OperationOOP.Api.Controllers
     [ApiController]
     public class PlantsController : ControllerBase
     {
+
+        // En Service för att filtrera växter
         private readonly PlantFilterService _plantFilterService;
         private readonly WateringScheduleService _wateringScheduleService;
         
@@ -25,7 +27,7 @@ namespace OperationOOP.Api.Controllers
             _wateringScheduleService = wateringScheduleService;
         }
 
-       
+       // // Hämtar alla växter
         [HttpGet]
         public ActionResult<IEnumerable<Plant>> GetPlants()
         {
