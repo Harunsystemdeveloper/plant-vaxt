@@ -1,9 +1,10 @@
-using OperationOOP.Core.Interfaces; 
-
-public class Plant : IEntity
+namespace OperationOOP.Core.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Species { get; set; }
-    public string CareLevel { get; set; } // T.ex. låg, medel, hög
+    public class Plant
+    {
+        public int Id { get; set; }  // Växtens ID
+        public string Name { get; set; } // Växtens Namn
+        public string Species { get; set; } // Art eller sort på växten
+        public string CareLevel { get; set; } // T.ex. låg, medel, hög
+    }
 }

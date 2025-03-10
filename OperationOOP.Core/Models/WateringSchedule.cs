@@ -1,5 +1,5 @@
 public class WateringSchedule
 {
-    public int PlantId { get; set; }
-    public DateTime NextWatering { get; set; }
+    public int PlantId { get; set; } // Växtens ID
+    public DateTime NextWatering { get; set; } // Detta visar nästa vattningstillfälle.
 }

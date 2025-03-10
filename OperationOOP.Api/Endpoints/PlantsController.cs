@@ -17,8 +17,8 @@ namespace OperationOOP.Api.Controllers
     
         private static List<Plant> plants = new List<Plant>
         {
-            new Plant { Id = 1, Name = "Bonsai Tree", Species = "Ficus", CareLevel = "High" },
-            new Plant { Id = 2, Name = "Cactus", Species = "Cactaceae", CareLevel = "Low" }
+            new Plant { Id = 1, Name = "Barrväxter", Species = "Småväxter", CareLevel = "Hög" },
+            new Plant { Id = 2, Name = "Mossor", Species = "Gröna växter", CareLevel = "Låg" }
         };
 
         public PlantsController(PlantFilterService plantFilterService, WateringScheduleService wateringScheduleService)
@@ -38,7 +38,9 @@ namespace OperationOOP.Api.Controllers
         [HttpGet("{id}")]
         public ActionResult<Plant> GetPlant(int id)
         {
+            // Denna söker efter en växt med det specifika id. 
             var plant = plants.Find(p => p.Id == id);
+            // Om ingen växt hittas returnera en not found. 
             if (plant == null)
             {
                 return NotFound();
@@ -67,8 +69,11 @@ namespace OperationOOP.Api.Controllers
     
         [HttpPut("{id}")]
         public ActionResult UpdatePlant(int id, Plant updatedPlant)
-        {
+        {  
+            // Denna söker efter en växt i listan med det specifika id. 
             var plant = plants.Find(p => p.Id == id);
+
+            // Om ingen växt hittas så returneras en not found.
             if (plant == null)
             {
                 return NotFound();
@@ -85,10 +90,12 @@ namespace OperationOOP.Api.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeletePlant(int id)
         {
+           // Denna kommer söka efter en växt i listan med det specifika id.
             var plant = plants.Find(p => p.Id == id);
+            // Om ingen växt hittas returneras Not found
             if (plant == null)
             {
-                return NotFound();
+                return NotFound();  
             }
 
             plants.Remove(plant);
